@@ -15,7 +15,7 @@ class Item(SQLModel, table=True):
     __tablename__ = 'sqlmodel_item'
 
     id: Optional[int] = Field(default=None, primary_key=True)
-    embedding: List[float] = Field(default=None, sa_column=Column(Vector(3)))
+    embedding: Optional[List[float]] = Field(default=None, sa_column=Column(Vector(3)))
 
 
 SQLModel.metadata.drop_all(engine)
